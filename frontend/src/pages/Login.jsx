@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/common/Header';
+import logiimg from '../assets/images/loginimg3.png'
 
 export default function Login() {
   return (
@@ -89,19 +90,13 @@ export default function Login() {
 
         <div class="flex items-center justify-center px-4 py-4 sm:py-4 lg:py-0 bg-gray-50 sm:px-4 lg:px-0">
             <div>
-                <img class="w-full mx-auto" src="https://cdn.rareblocks.xyz/collection/celebration/images/signup/1/cards.png" alt="" />
+                <img class="w-full mx-auto" src={logiimg} alt="" />
 
                 <div class="w-full max-w-md mx-auto xl:max-w-xl">
-                    <h3 class="text-2xl font-bold text-center text-black">Design your own card</h3>
+                    <h3 class="text-4xl font-bold text-center text-black">Maintain Your Potfolio</h3>
                     <p class="leading-relaxed text-center text-gray-500 mt-2.5">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.</p>
 
-                    <div class="flex items-center justify-center mt-10 space-x-3">
-                        <div class="bg-orange-500 rounded-full w-20 h-1.5"></div>
-
-                        <div class="bg-gray-200 rounded-full w-12 h-1.5"></div>
-
-                        <div class="bg-gray-200 rounded-full w-12 h-1.5"></div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
