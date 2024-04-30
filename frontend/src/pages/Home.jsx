@@ -1,13 +1,15 @@
 import React from 'react'
 import finace from '../assets/images/finance4.png'
 import Header from '../components/common/Header'
+import { Link } from 'react-router-dom'
+import '../styles/header.css'
+
 
 
 export default function Home() {
   return (
     <div>
       <Header/>
-      <div className="mt-24">
         <section id="hero">
           <div className="container hero-container">
             <div className="row">
@@ -18,12 +20,11 @@ export default function Home() {
                 <span>Your perfect bookkeeper</span>
                 <h1>Maintain your finances <b>Future of Personal Financing</b></h1>
                 <p>Manage accounts, perform financial forecasts, all from a single application.</p>
-                <a href="#" className="btn btn-regular">Get Started</a>
+                <Link to={'/login'}><a href="#" className="btn-regulars">Get Started</a></Link>
               </div>
             </div>
           </div>
         </section>
       </div>
-    </div>
   )
 }

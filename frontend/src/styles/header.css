@@ -4,6 +4,8 @@
 	color: #3a3f52;
 }
 
+
+
 h2 {
 	font-size: 44px;
 	font-weight: 700;
@@ -125,7 +127,7 @@ section {
 	text-decoration: none;
 }
 
-.btn-regular {
+.btn-regulars {
 	background-color: #0095f7;
 	color: #ffffff;
 	padding: 10px 25px;

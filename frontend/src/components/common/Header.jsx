@@ -1,41 +1,62 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import '../../styles/header.css'; 
 import logo from '../../assets/images/logo.png'
 
 
 export default function Header() {
   return (
-    <div className='navBody'>
-        
-      <nav className="navbar navbar-default navbar-expand-lg fixed-top custom-navbar">
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="icon ion-md-menu"></span>
-        </button>
-        <img src={logo} className="img-fluid nav-logo-mobile w-10" alt="Company Logo"/>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <div className="container">
-          <img src={logo} className="img-fluid nav-logo-desktop" alt="Company Logo" width="200px"/>
-            <ul className="navbar-nav ml-auto nav-right" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
-              <li className="nav-item nav-custom-link">
-                <a className="nav-link" href="index.html">Home <i className="icon ion-ios-arrow-forward icon-mobile"></i></a>
-              </li>
-              <li className="nav-item nav-custom-link">
-                <a className="nav-link" href="#marketing">Features <i className="icon ion-ios-arrow-forward icon-mobile"></i></a>
-              </li>
-              <li className="nav-item nav-custom-link">
-                <a className="nav-link" href="#testimonials">Testimonials <i className="icon ion-ios-arrow-forward icon-mobile"></i></a>
-              </li>
-              <li className="nav-item nav-custom-link">
-                <a className="nav-link" href="#pricing">Pricing <i className="icon ion-ios-arrow-forward icon-mobile"></i></a>
-              </li>
-              <li className="nav-item nav-custom-link btn btn-demo-small">
-                <a className="nav-link" href="#">Get Started<i className="icon ion-ios-arrow-forward icon-mobile"></i></a>
-              </li>
-            </ul>
+    <header class="pb-6 bg-white w-full fixed lg:pb-0">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+  
+        <nav class="flex items-center justify-between h-16 lg:h-20">
+            <div class="flex-shrink-0">
+                <a href="#" title="" class="flex">
+                    <img class="w-auto h-8 lg:h-10" src={logo} alt="" />
+                </a>
+            </div>
+
+            <button type="button" class="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100">
+                {/* <!-- Menu open: "hidden", Menu closed: "block" --> */}
+                <svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+                </svg>
+
+                {/* <!-- Menu open: "block", Menu closed: "hidden" --> */}
+                <svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
+                <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Features </a>
+
+                <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Solutions </a>
+
+                <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Resources </a>
+
+                <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Pricing </a>
+            </div>
+            <a href="#" title="" class="items-center justify-center hidden px-4 py-2 ml-10 text-base font-semibold text-white transition-all duration-200 bg-sky-500 border border-transparent rounded-md lg:inline-flex hover:bg-sky-600 focus:bg-blue-700" role="button">Login </a>
+            <a href="#" title="" class="items-center justify-center hidden px-4 py-2 ml-4 text-base font-semibold text-white transition-all duration-200 bg-sky-500 border border-transparent rounded-md lg:inline-flex hover:bg-sky-600 focus:bg-blue-700" role="button"> Signup</a>
+
+
+            <a href="#" title="" class="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-sky-700 border border-transparent rounded-md lg:inline-flex hover:bg-sky-800 focus:bg-blue-700" role="button"> Get started now </a>
+        </nav>
+
+        {/* <!-- xs to lg --> */}
+        <nav className="pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md lg:hidden">
+          <div className="flex flex-col px-6 space-y-1">
+            <a href="#" className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Features</a>
+            <a href="#" className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Solutions</a>
+            <a href="#" className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Resources</a>
+            <a href="#" className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Pricing</a>
           </div>
-        </div>
-      </nav>
+          <div className="px-6 mt-6">
+            <a href="#" className="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md items-center hover:bg-blue-700 focus:bg-blue-700" role="button"> Get started now </a>
+          </div>
+        </nav>
     </div>
+</header>
+
   );
 }
