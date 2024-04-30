@@ -1,24 +1,29 @@
 import React from 'react'
-import iphone from '../assets/images/iphone.png'
+import finace from '../assets/images/finance4.png'
+import Header from '../components/common/Header'
+
 
 export default function Home() {
   return (
     <div>
+      <Header/>
+      <div className="mt-24">
         <section id="hero">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-          <img src={iphone} class="img-fluid" alt="Demo image"/>
-        </div>
-        <div class="col-md-7 content-box hero-content">
-          <span>Unlimited Data</span>
-          <h1>Digital Innovation and the <b>Future of Digital Marketing</b></h1>
-          <p>Boost your digital marketing campaigns and increase your conversion rates</p>
-          <a href="#" class="btn btn-regular">Learn more</a>
-        </div>
+          <div className="container hero-container">
+            <div className="row">
+              <div className="col-lg-3 col-md-3 col-sm-3 col-xs-">
+                <img src={finace} className="img-fluid" alt="Demo image"/>
+              </div>
+              <div className="col-md-8 content-box hero-content">
+                <span>Your perfect bookkeeper</span>
+                <h1>Maintain your finances <b>Future of Personal Financing</b></h1>
+                <p>Manage accounts, perform financial forecasts, all from a single application.</p>
+                <a href="#" className="btn btn-regular">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
-  </section>
     </div>
   )
 }

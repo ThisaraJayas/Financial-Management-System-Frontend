@@ -6,7 +6,7 @@ import Home from "../pages/Home";
 export default function RoutesPath() {
   return (
     <>
-    <Header/>
+ 
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
