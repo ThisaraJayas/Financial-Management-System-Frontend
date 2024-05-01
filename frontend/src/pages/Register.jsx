@@ -1,11 +1,26 @@
 import React, { useState } from 'react';
 import Header from '../components/common/Header';
 import logiimg from '../assets/images/loginimg3.png'
+import axios from 'axios'
 
 export default function Register() {
     const [name,setName]=useState('')
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
+
+    const handleSubmit=async(e)=>{
+        e.preventDefault()
+        try{
+            const response = await axios.post("http://localhost:8080/users/register",{
+                name,
+                email,
+                password
+            })
+            console.log(response);
+        }catch(err){
+            console.log(err);
+        }
+    }
   return (
     <div>
         <Header/>
@@ -16,7 +31,7 @@ export default function Register() {
                 <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign up to Celebration</h2>
                 <p class="mt-2 text-base text-gray-600">Already have an account? <a href="#" title="" class="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 hover:underline focus:text-blue-700">Login</a></p>
 
-                <form action="#" method="POST" class="mt-4">
+                <form onSubmit={handleSubmit} class="mt-4">
                     <div class="space-y-5">
                         <div>
                             <label for="" class="text-base font-medium text-gray-900"> Full Name </label>
@@ -25,6 +40,8 @@ export default function Register() {
                                     type="text"
                                     name=""
                                     id=""
+                                    value={name}
+                                    onChange={(e)=>setName(e.target.value)}
                                     placeholder="Enter your full name"
                                     class="block w-full p-3 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                                 />
@@ -38,6 +55,8 @@ export default function Register() {
                                     type="email"
                                     name=""
                                     id=""
+                                    value={email}
+                                    onChange={(e)=>setEmail(e.target.value)}
                                     placeholder="Enter email to get started"
                                     class="block w-full p-3 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                                 />
@@ -51,6 +70,8 @@ export default function Register() {
                                     type="password"
                                     name=""
                                     id=""
+                                    value={password}
+                                    onChange={(e)=>setPassword(e.target.value)}
                                     placeholder="Enter your password"
                                     class="block w-full p-3 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                                 />
