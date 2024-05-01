@@ -17,8 +17,8 @@ export default function Register() {
                 password
             })
             console.log(response);
-        }catch(err){
-            console.log(err);
+        }catch(error){
+            console.log(error);
         }
     }
   return (
