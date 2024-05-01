@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/header.css'; 
 import logo from '../../assets/images/logo.png'
+import { Link } from 'react-router-dom'
 
 
 export default function Header() {
@@ -36,11 +37,11 @@ export default function Header() {
 
                 <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Pricing </a>
             </div>
-            <a href="#" title="" class="items-center justify-center hidden px-4 py-2 ml-10 text-base font-semibold text-white transition-all duration-200 bg-sky-500 border border-transparent rounded-md lg:inline-flex hover:bg-sky-600 focus:bg-blue-700" role="button">Login </a>
+            <Link to={'/login'}><a href="#" title="" class="items-center justify-center hidden px-4 py-2 ml-10 text-base font-semibold text-white transition-all duration-200 bg-sky-500 border border-transparent rounded-md lg:inline-flex hover:bg-sky-600 focus:bg-blue-700" role="button">Login </a> </Link>
             <a href="#" title="" class="items-center justify-center hidden px-4 py-2 ml-4 text-base font-semibold text-white transition-all duration-200 bg-sky-500 border border-transparent rounded-md lg:inline-flex hover:bg-sky-600 focus:bg-blue-700" role="button"> Signup</a>
 
 
-            <a href="#" title="" class="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-sky-700 border border-transparent rounded-md lg:inline-flex hover:bg-sky-800 focus:bg-blue-700" role="button"> Get started now </a>
+            <Link to={'/login'}><a href="#" title="" class="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-sky-700 border border-transparent rounded-md lg:inline-flex hover:bg-sky-800 focus:bg-blue-700" role="button"> Get started now </a></Link>
         </nav>
 
         {/* <!-- xs to lg --> */}
@@ -52,7 +53,7 @@ export default function Header() {
             <a href="#" className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Pricing</a>
           </div>
           <div className="px-6 mt-6">
-            <a href="#" className="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md items-center hover:bg-blue-700 focus:bg-blue-700" role="button"> Get started now </a>
+          <Link to={'/login'}><a href="#" className="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md items-center hover:bg-blue-700 focus:bg-blue-700" role="button"> Get started now </a></Link>
           </div>
         </nav>
     </div>
