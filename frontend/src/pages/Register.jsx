@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/common/Header';
 import logiimg from '../assets/images/loginimg3.png'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 export default function Register() {
     const [name,setName]=useState('')
@@ -28,8 +29,8 @@ export default function Register() {
     <div class="grid grid-cols-1 lg:grid-cols-2">
         <div class="flex items-center justify-center px-4 py-4 bg-white sm:px-4 lg:px-4 sm:py-4 lg:py-0">
             <div class="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
-                <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign up to Celebration</h2>
-                <p class="mt-2 text-base text-gray-600">Already have an account? <a href="#" title="" class="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 hover:underline focus:text-blue-700">Login</a></p>
+                <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign up </h2>
+                <p class="mt-2 text-base text-gray-600">Already have an account?<Link to={"/login"}> <a href="#" title="" class="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 hover:underline focus:text-blue-700">Login</a></Link></p>
 
                 <form onSubmit={handleSubmit} class="mt-4">
                     <div class="space-y-5">
