@@ -1,36 +1,40 @@
 import React, { useState } from 'react'
-// import logo from '../logo.png';
-
-// icons
+import logo from '../../assets/images/logohome.png'
 import { MdMenuOpen } from "react-icons/md";
-import { IoHomeOutline } from "react-icons/io5";
-import { FaProductHunt } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { TbReportSearch } from "react-icons/tb";
-import { IoLogoBuffer } from "react-icons/io";
-import { CiSettings } from "react-icons/ci";
-import { MdOutlineDashboard } from "react-icons/md";
+import { Link } from 'react-router-dom';
+import { RiWallet3Line } from "react-icons/ri";
+import { TbPigMoney } from "react-icons/tb";
+import { MdOutlineMoneyOff } from "react-icons/md";
+import { GrTransaction } from "react-icons/gr";
+import { TbReportMoney } from "react-icons/tb";
 
 const menuItems = [
   {
-    icons: <IoHomeOutline size={30} />,
-    label: 'Home'
+    icons: <RiWallet3Line  size={30} />,
+    label: 'Home',
+    link: "/home"
   },
   {
-    icons: <FaProductHunt size={30} />,
-    label: 'Products'
+    icons: <TbPigMoney  size={30} />,
+    label: 'Income',
+    link: "/home/income"
   },
   {
-    icons: <MdOutlineDashboard size={30} />,
-    label: 'Dashboard'
+    icons: <MdOutlineMoneyOff  size={30} />,
+    label: 'Expenses',
+    link: "/home/expenses"
   },
   {
-    icons: <CiSettings size={30} />,
-    label: 'Setting'
+    icons: <GrTransaction  size={30} />,
+    label: 'Transfers',
+    link: "/home/transfers"
   },
   {
-    icons: <IoLogoBuffer size={30} />,
-    label: 'Log'
+    icons: <TbReportMoney  size={30} />,
+    label: 'Transactions',
+    link: "/home/transactions"
   },
   {
     icons: <TbReportSearch size={30} />,
@@ -43,12 +47,11 @@ export default function UserSidebar() {
   const [open, setOpen] = useState(true)
 
   return (
-    <nav className={`shadow-md h-screen p-2 flex flex-col duration-500 bg-blue-600 text-white ${open ? 'w-60' : 'w-16'}`}>
+    <nav className="shadow-md h-screen p-2 flex flex-col duration-500 bg-blue-600 text-white w-56 ">
 
       {/* Header */}
       <div className=' px-3 py-2 h-20 flex justify-between items-center'>
-        {/* <img src={logo} alt="Logo" className={`${open ? 'w-10' : 'w-0'} rounded-md`} /> */}
-        <div><MdMenuOpen size={34} className={` duration-500 cursor-pointer ${!open && ' rotate-180'}`} onClick={() => setOpen(!open)} /></div>
+        <img src={logo} alt="Logo" className="w-36"/>
       </div>
 
       {/* Body */}
@@ -57,6 +60,7 @@ export default function UserSidebar() {
         {
           menuItems.map((item, index) => {
             return (
+              <Link to={item.link}>
               <li key={index} className='px-3 py-2 my-2 hover:bg-blue-800 text-white rounded-md duration-300 cursor-pointer flex gap-2 items-center relative group'>
                 <div>{item.icons}</div>
                 <p className={`${!open && 'w-0 translate-x-24'} duration-500 overflow-hidden`}>{item.label}</p>
@@ -64,6 +68,7 @@ export default function UserSidebar() {
                  w-0 p-0 text-black bg-white duration-100 overflow-hidden group-hover:w-fit group-hover:p-2 group-hover:left-16
                 `}>{item.label}</p>
               </li>
+              </Link>
             )
           })
         }
