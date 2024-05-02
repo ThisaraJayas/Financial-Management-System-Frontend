@@ -1,5 +1,5 @@
 import React from 'react'
-import IncomeNav from './components/IncomeNav'
+import IncomeNav from '../components/IncomeNav'
 
 
 export default function Income() {

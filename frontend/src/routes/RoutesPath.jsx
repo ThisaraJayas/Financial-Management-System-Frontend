@@ -5,7 +5,8 @@ import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import UserHome from "../pages/UserHome/UserHome";
-import Income from "../pages/Income/components/pages/IncomePage";
+import Income from "../pages/Income/IncomePage";
+import AddIncomePage from '../pages/Income/AddIncompePage'
 import Expenses from "../pages/Expenses/Expenses"
 import Transfers from "../pages/Transfers/Transfers"
 import Transaction from "../pages/Transactions/Transaction"
@@ -20,6 +21,7 @@ export default function RoutesPath() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/home" element={<HomePage/>}/>
         <Route path="/home/income" element={<Income/>}/>
+        <Route path="/home/income/addincome" element={<AddIncomePage/>}/>
         <Route path="/home/expenses" element={<Expenses/>}/>
         <Route path="/home/transfers" element={<Transfers/>}/>
         <Route path="/home/transactions" element={<Transaction/>}/>
