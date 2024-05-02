@@ -6,38 +6,20 @@
 
 
 
-h2 {
-	font-size: 44px;
-	font-weight: 700;
-}
 
-h3 {
-	font-size: 24px;
-	font-weight: 500;
-	margin-bottom: 25px;
-}
 
-h5 {
-	font-size: 16px;
-}
-
-p {
+.p1 {
 	font-size: 14px;
 	font-weight: 400;
 	letter-spacing: .05em;
 	color: #53627C;
 }
 
-ul {
-	list-style-type: none;
-	padding-left: 0px;
-}
 
-b {
-	font-weight: 700;
-}
 
-section {
+
+
+.section1 {
 	padding: 100px 0px;
 }
 
