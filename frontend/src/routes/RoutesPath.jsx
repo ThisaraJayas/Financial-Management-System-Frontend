@@ -5,7 +5,7 @@ import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import UserHome from "../pages/UserHome/UserHome";
-import Income from "../pages/IncomePage";
+import Income from "../pages/Income/components/pages/IncomePage";
 import Expenses from "../pages/Expenses/Expenses"
 import Transfers from "../pages/Transfers/Transfers"
 import Transaction from "../pages/Transactions/Transaction"
