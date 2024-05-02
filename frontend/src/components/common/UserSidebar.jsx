@@ -38,7 +38,7 @@ const menuItems = [
   }
 ]
 
-export default function UserHeader() {
+export default function UserSidebar() {
 
   const [open, setOpen] = useState(true)
 

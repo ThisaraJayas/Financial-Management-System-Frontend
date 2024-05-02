@@ -1,10 +1,10 @@
 import React from 'react'
-import UserHeader from '../components/common/UserHeader'
+import UserSidebar from '../components/common/UserSidebar'
 
 export default function () {
   return (
     <div>
-        <UserHeader/>
+        <UserSidebar/>
     </div>
   )
 }
