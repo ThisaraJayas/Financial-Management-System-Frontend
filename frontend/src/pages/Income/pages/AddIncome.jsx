@@ -19,7 +19,7 @@ export default function AddIncome() {
     console.log(date);
     console.log(amount);
     
-    const response = await axios.post('http://localhost:8061/incomes/add',{
+    const response = await axios.post(`http://localhost:8061/users/${userId}/incomes/add`,{
       userId,
       date,
       amount,

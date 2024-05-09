@@ -26,10 +26,12 @@ export default function IncomeNav() {
         <p  className="text-lg">Add_Income</p>
       </Button>
       </Link>
+      <Link to={'/home/income/allincome'}>
       <Button color="gray">
         <HiOutlineClipboardList   className="mr-3 h-6 w-6" />
         <p  className="text-lg">All_Income</p>
       </Button>
+      </Link>
     </Button.Group>
   );
 }
