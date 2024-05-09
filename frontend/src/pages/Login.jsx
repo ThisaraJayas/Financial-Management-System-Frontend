@@ -1,24 +1,34 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logiimg from '../assets/images/loginimg3.png'
 import Header from "../components/common/Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { UserContext } from "../context/UserContext";
 
 export default function Login() {
 
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
+  const {userData, setUserData}=useContext(UserContext);
+  const navigate = useNavigate()
 
   const handleLogin =async(e)=>{
     e.preventDefault()
     console.log(email);
     console.log(password);
+    
     try{
       const response = await axios.post('http://localhost:8061/users/login',{
         email,
         password
       })
-      console.log(response);
+      console.log(response.data);
+      
+      if(response){
+        setUserData(response.data)
+        navigate('/home')
+      }
+
     }catch(error){
 
     }

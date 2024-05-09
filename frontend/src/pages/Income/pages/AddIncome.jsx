@@ -1,19 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import IncomeNav from "../components/IncomeNav";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { Datepicker, TextInput, Label, Select } from "flowbite-react";
+import axios from "axios";
+import { UserContext } from "../../../context/UserContext";
 
 export default function AddIncome() {
-  const [dates, setDates] = useState(null);
+  const {userData}=useContext(UserContext)
+  const [date, setDates] = useState(null);
   const [amount, setAmount] = useState(0);
   const [incomeCategory, setIncomeCategory] = useState('');
-
-  const handleSubmit = (e) => {
+  const userId = userData.id
+  console.log(userId);
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log(dates);
+    console.log(date);
     console.log(amount);
+    
+    const response = await axios.post('http://localhost:8061/incomes/add',{
+      userId,
+      date,
+      amount,
+      incomeCategory
+    })
+    console.log(response);
   };
 
   return (
@@ -29,7 +41,7 @@ export default function AddIncome() {
                   <div className="mb-1 block">
                     <Label htmlFor="date" value="Select Date" />
                   </div>
-                  <input type="date" className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-500" value={dates} onChange={(e)=>setDates(e.target.value)} />
+                  <input type="date" className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-500" value={date} onChange={(e)=>setDates(e.target.value)} />
                 </div>
               </div>
               <div>
