@@ -11,10 +11,12 @@ import Expenses from "../pages/Expenses/Expenses"
 import Transfers from "../pages/Transfers/Transfers"
 import Transaction from "../pages/Transactions/Transaction"
 import HomePage from "../pages/HomePage";
+import UseContextProvider from '../context/UserContext'
 
 export default function RoutesPath() {
   return (
     <>
+    <UseContextProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register/>}/>
@@ -26,6 +28,7 @@ export default function RoutesPath() {
         <Route path="/home/transfers" element={<Transfers/>}/>
         <Route path="/home/transactions" element={<Transaction/>}/>
       </Routes>
+      </UseContextProvider>
     </>
   );
 }

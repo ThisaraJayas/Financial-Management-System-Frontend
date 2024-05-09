@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import logiimg from '../assets/images/loginimg3.png'
 import Header from "../components/common/Header";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
+
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')
+
+  const handleLogin =async(e)=>{
+    e.preventDefault()
+    console.log(email);
+    console.log(password);
+    try{
+      const response = await axios.post('http://localhost:8061/users/login',{
+        email,
+        password
+      })
+      console.log(response);
+    }catch(error){
+
+    }
+  }
   return (
     <div>
         <Header/>
@@ -23,7 +42,7 @@ export default function Login() {
                 </a></Link>
               </p>
 
-              <form class="mt-4">
+              <form class="mt-4" onSubmit={handleLogin}>
                 <div class="space-y-5">
                   <div>
                     <label for="" class="text-base font-medium text-gray-900">
@@ -35,6 +54,8 @@ export default function Login() {
                         type="email"
                         name=""
                         id=""
+                        value={email}
+                        onChange={(e)=>setEmail(e.target.value)}
                         placeholder="Enter email to get started"
                         class="block w-full p-3 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                       />
@@ -51,6 +72,8 @@ export default function Login() {
                         type="password"
                         name=""
                         id=""
+                        value={password}
+                        onChange={(e)=>setPassword(e.target.value)}
                         placeholder="Enter your password"
                         class="block w-full p-3 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                       />
