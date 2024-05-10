@@ -41,7 +41,7 @@ export default function AllIncome() {
                     id: income.incomeId,
                     date: income.date,
                     category: income.incomeCategory,
-                    amount: income.amount
+                    amount: income.amount 
                 })));
 
             }catch(error){

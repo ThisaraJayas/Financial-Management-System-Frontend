@@ -29,12 +29,12 @@ export default function AddIncome() {
   };
 
   return (
-    <div className="pt-8">
+    <div className="pt-8 ml-44 mr-44">
       <IncomeNav />
       <div className="pt-8 text-4xl font-bold">Add Income</div>
       <div className="pt-6">
         <form onSubmit={handleSubmit}>
-          <Paper sx={{ width: "100%", maxWidth: "100%", boxShadow: 6 }}>
+          <Paper sx={{ width: "100%", maxWidth: "100%", boxShadow: 6, paddingBottom:"1%", marginBottom:"3%" }}>
             <div className="p-8">
               <div>
                 <div className="max-w-md mt-2">
@@ -77,11 +77,14 @@ export default function AddIncome() {
                 </Select>
               </div>
             </div>
-            <Stack spacing={2} direction="row">
+            <div className="mb-8">
+            <Stack className="ml-9" spacing={2} direction="row">
               <Button type="submit" variant="outlined">
                 Submit
               </Button>
             </Stack>
+            </div>
+            
           </Paper>
         </form>
       </div>
