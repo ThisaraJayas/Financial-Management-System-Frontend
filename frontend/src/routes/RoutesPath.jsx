@@ -14,6 +14,8 @@ import HomePage from "../pages/HomePage";
 import UseContextProvider from '../context/UserContext'
 import AllIncome from "../pages/Income/pages/AllIncome";
 import AllIncomePage from "../pages/Income/AllIncomePage";
+import AddExpense from "../pages/Expenses/AddExpense";
+import AllExpense from "../pages/Expenses/AllExpense";
 
 export default function RoutesPath() {
   return (
@@ -28,6 +30,8 @@ export default function RoutesPath() {
         <Route path="/home/income/addincome" element={<AddIncomePage/>}/>
         <Route path="/home/income/allincome" element={<AllIncomePage/>}/>
         <Route path="/home/expenses" element={<Expenses/>}/>
+        <Route path="/home/expenses/addexpense" element={<AddExpense/>}/>
+        <Route path="/home/expenses/allexpense" element={<AllExpense/>}/>
         <Route path="/home/transfers" element={<Transfers/>}/>
         <Route path="/home/transactions" element={<Transaction/>}/>
 
