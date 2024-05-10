@@ -72,7 +72,7 @@ export default function UserHeader() {
       <div className='flex items-center gap-2 mr-4'>
         <FaUserCircle size={30} />
         <div className={`${!open && 'hidden'}`}>
-          <p>Saheb</p>
+          <p>Thisara</p>
           
         </div>
       </div>
