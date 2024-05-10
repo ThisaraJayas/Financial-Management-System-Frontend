@@ -5,12 +5,10 @@ import AllIncome from './pages/AllIncome';
 export default function AllIncomePage() {
     return (
         <>
-          <div className="backgroundBody">
-            <div className="grid-container">
-              <UserSidebar />
+                    <UserSidebar/>
+
               <AllIncome />
-            </div>
-          </div>
+            
         </>
       );
 }

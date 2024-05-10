@@ -1,37 +1,34 @@
-import React from "react";
-import { IoMdAddCircleOutline } from "react-icons/io";
-"use client";
-import { HiOutlineClipboardList } from "react-icons/hi";
-import { MdOutlineAttachMoney } from "react-icons/md";
-import { Button } from "flowbite-react";
-import { HiAdjustments, HiCloudDownload, HiUserCircle } from "react-icons/hi";
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Box from '@mui/material/Box';
 import { Link } from "react-router-dom";
 
+
 export default function IncomeNav() {
-  const buttonStyle = { fontSize: "1.2rem" };
-
   return (
-    <Button.Group>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        '& > *': {
+          m: 1,
+        },
+      }}
+    >
+      <ButtonGroup variant="outlined" aria-label="Basic button group">
       <Link to={'/home/income'}>
-      <Button color="gray">
-
-        <MdOutlineAttachMoney  className="mr-3 h-6 w-6" />
-        <p  className="text-lg">Income</p>
-      </Button>
-      </Link>
-      <Link to={'/home/income/addincome'}>
-      <Button color="gray">
-        
-        <IoMdAddCircleOutline className="mr-3 h-6 w-6" />
-        <p  className="text-lg">Add_Income</p>
-      </Button>
-      </Link>
-      <Link to={'/home/income/allincome'}>
-      <Button color="gray">
-        <HiOutlineClipboardList   className="mr-3 h-6 w-6" />
-        <p  className="text-lg">All_Income</p>
-      </Button>
-      </Link>
-    </Button.Group>
+        <Button>Income</Button>
+        </Link>
+        <Link to={'/home/income/addincome'}>
+        <Button>Add Income</Button>
+        </Link>
+        <Link to={'/home/income/allincome'}>
+        <Button>All Income</Button>
+        </Link>
+      </ButtonGroup>
+    
+    </Box>
   );
 }
