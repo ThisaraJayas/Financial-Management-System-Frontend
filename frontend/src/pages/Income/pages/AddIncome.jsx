@@ -69,6 +69,7 @@ export default function AddIncome() {
                   onChange={(e) => setIncomeCategory(e.target.value)}
                   required
                 >
+                  <option value=""></option>
                   <option value="Salary">Salary</option>
                   <option value="Rental Income">Rental Income</option>
                   <option value="Interest Income">Interest Income</option>

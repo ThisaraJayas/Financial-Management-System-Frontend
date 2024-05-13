@@ -18,11 +18,12 @@ export default function AddExpense() {
   const handleSubmit = async(e) => {
     e.preventDefault()
     console.log(date);
+    console.log(expenseCategory);
 
     const response = await axios.post(`http://localhost:8061/users/${userId}/expenses/add`,{
       userId,
       date,
-      expense,
+      amount:expense,
       expenseCategory
     })
     console.log(response);
@@ -43,8 +44,7 @@ export default function AddExpense() {
                   <div className="mb-1 block">
                     <Label htmlFor="date" value="Select Date" />
                   </div>
-                  <input type="date" className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-500" 
-                  // value={date} onChange={(e)=>setDates(e.target.value)} 
+                  <input type="date" className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-500" value={date} onChange={(e)=>setDates(e.target.value)} 
                   />
                 </div>
               </div>
@@ -57,8 +57,8 @@ export default function AddExpense() {
                     id="amount"
                     type="number"
                     placeholder="Amount"
-                    // value={amount}
-                    // onChange={(e) => setAmount(e.target.value)}
+                    value={expense}
+                    onChange={(e) => setExpense(e.target.value)}
                     required
                   />
                 </div>
@@ -69,16 +69,17 @@ export default function AddExpense() {
                 </div>
                 <Select
                   id="expenseCategory"
-                  // value={incomeCategory}
-                  // onChange={(e) => setIncomeCategory(e.target.value)}
+                  value={expenseCategory}
+                  onChange={(e) => setExpenseCategory(e.target.value)}
                   required
                 >
-                  <option value="Rental">Rental Expense</option>
+                  <option value=""></option>
+                  <option value="Rental Expense">Rental Expense</option>
                   <option value="Insurance">Insurance</option>
                   <option value="Utilities">Utilities</option>
                   <option value="Entertainment">Entertainment</option>
                   <option value="Debt">Debt</option>
-                  <option value="Travel">Travel expenses</option>
+                  <option value="Travel Expenses">Travel expenses</option>
                   <option value="Other">Other</option>
                 </Select>
               </div>
