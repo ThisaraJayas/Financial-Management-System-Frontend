@@ -80,7 +80,7 @@ export default function AddIncome() {
             <div className="mb-8">
             <Stack className="ml-9" spacing={2} direction="row">
               <Button type="submit" variant="outlined">
-                Submit
+                Add Income
               </Button>
             </Stack>
             </div>
