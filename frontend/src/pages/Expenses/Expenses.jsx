@@ -14,15 +14,15 @@ import { UserContext } from "../../context/UserContext";
 export default function Expenses() {
   const {userData} = useContext(UserContext)
   const userId=userData.id
-  const [currentBalance, setCurrentBalance] = useState(0)
-  const [monthlyIncome, setMonthlyIncome]=useState(0)
+  const [currentExpenses, setCurrentExpenses] = useState(0)
+  const [monthlyExpense, setMonthlyExpenses]=useState(0)
 
   useEffect(()=>{
     const fectchTotalIncome = async()=>{
       try{
         const response = await axios.get(`http://localhost:8061/users/${userId}/expenses/currentexpenses`)
         console.log(response);
-        setCurrentBalance(response.data)
+        setCurrentExpenses(response.data)
       }catch(error){
         console.log(error);
       }
@@ -30,16 +30,16 @@ export default function Expenses() {
     fectchTotalIncome()
   },[])
   useEffect(()=>{
-    const fectchMonthlyIncome = async()=>{
+    const fectchMonthlyExpenses = async()=>{
       try{
         const response = await axios.get(`http://localhost:8061/users/${userId}/expenses/monthlyexpenses`)
         console.log(response);
-        setMonthlyIncome(response.data)
+        setMonthlyExpenses(response.data)
       }catch(error){
         console.log(error);
       }
     }
-    fectchMonthlyIncome()
+    fectchMonthlyExpenses()
   },[])
   return (
     <>
@@ -64,7 +64,7 @@ export default function Expenses() {
                 Current Balance
                 </h2>
               </div>
-              <h1 className="text-green-400">LKR {currentBalance}</h1>
+              <h1 className="text-green-400">LKR {currentExpenses}</h1>
             </div>
            
             <div className="cards flex justify-center">
@@ -79,7 +79,7 @@ export default function Expenses() {
                   Monthly Income
                 </h2>
               </div>
-              <h1 className="text-blue-500">LKR {monthlyIncome}</h1>
+              <h1 className="text-blue-500">LKR {monthlyExpense}</h1>
             </div>
             
           </div>
