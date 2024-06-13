@@ -1,8 +1,44 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from "react";
+import { IoMdPerson } from "react-icons/io";
+import { BsPersonHearts } from "react-icons/bs";
+import axios from "axios";
 import ExpenseNav from './components/ExpenseNav'
 import UserSidebar from '../../components/common/UserSidebar'
+import { GiReceiveMoney } from "react-icons/gi";
+import { GiTakeMyMoney } from "react-icons/gi";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { UserContext } from "../../../context/UserContext";
 
 export default function Expenses() {
+  const {userData} = useContext(UserContext)
+  const userId=userData.id
+  const [currentBalance, setCurrentBalance] = useState(0)
+  const [monthlyIncome, setMonthlyIncome]=useState(0)
+
+  useEffect(()=>{
+    const fectchTotalIncome = async()=>{
+      try{
+        const response = await axios.get(`http://localhost:8061/users/${userId}/expenses/currentexpenses`)
+        console.log(response);
+        setCurrentBalance(response.data)
+      }catch(error){
+        console.log(error);
+      }
+    }
+    fectchTotalIncome()
+  },[])
+  useEffect(()=>{
+    const fectchMonthlyIncome = async()=>{
+      try{
+        const response = await axios.get(`http://localhost:8061/users/${userId}/expenses/monthlyexpenses`)
+        console.log(response);
+        setMonthlyIncome(response.data)
+      }catch(error){
+        console.log(error);
+      }
+    }
+    fectchMonthlyIncome()
+  },[])
   return (
     <>
     <UserSidebar/>
