@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { IoMdPerson } from "react-icons/io";
 import { BsPersonHearts } from "react-icons/bs";
 import axios from "axios";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import ExpenseNav from './components/ExpenseNav'
 import UserSidebar from '../../components/common/UserSidebar'
 import { GiReceiveMoney } from "react-icons/gi";
 import { GiTakeMyMoney } from "react-icons/gi";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { UserContext } from "../../../context/UserContext";
+import { UserContext } from "../../context/UserContext";
+
 
 export default function Expenses() {
   const {userData} = useContext(UserContext)
