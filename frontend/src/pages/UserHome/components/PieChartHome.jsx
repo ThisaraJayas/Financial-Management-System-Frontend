@@ -21,6 +21,7 @@ export default function PieChartHome() {
         }
         fectchTotalIncome()
       },[])
+      
       useEffect(()=>{
         const fectchTotalExpense = async()=>{
           try{
