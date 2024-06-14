@@ -57,7 +57,7 @@ export default function TopBoxes() {
   return (
     <div className="container pt-8 pl-8">
           <div className="mainTitle">
-            <h3>Income Dashboard</h3>
+            <h3>Dashboard</h3>
           </div>
           <div className="mainCards">
           <div className="cards flex justify-center">
